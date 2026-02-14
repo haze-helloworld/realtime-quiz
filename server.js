@@ -26,7 +26,7 @@ app.get("/host", (req, res) =>
 const io = new Server(server, { cors: { origin: "*" } });
 instrument(io, { auth: false, mode: "development" });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const HOST_PASSWORD = "teacher123";
 
 /* ================= PLAYERS ================= */
