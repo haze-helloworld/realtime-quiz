@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Host Dashboard</title>
+    <link rel="stylesheet" href="host.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header>
+    <h1>🎓 Quiz Host Dashboard</h1>
+</header>
+
+<!-- LOGIN -->
+<div id="login" class="center-box">
+    <h2>Host Login</h2>
+    <input id="password" type="password" placeholder="Enter host password">
+    <button id="loginBtn">Login</button>
+</div>
+
+<!-- PANEL -->
+<div id="panel" style="display:none">
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <div>
+            <b>Total Questions:</b> <span id="count">0</span>
+        </div>
+        <button id="start" class="start-btn">▶ Start Quiz</button>
+    </div>
+
+    <!-- QUESTION LIST -->
+    <section>
+        <h2>Question Bank</h2>
+        <div id="questions" class="question-list"></div>
+    </section>
+
+    <!-- ADD / EDIT -->
+    <section class="editor">
+        <h2>Add / Edit Question</h2>
+
+        <input id="question" placeholder="Enter question text">
+
+        <div class="options">
+            <input class="opt" placeholder="Option 1">
+            <input class="opt" placeholder="Option 2">
+            <input class="opt" placeholder="Option 3">
+            <input class="opt" placeholder="Option 4">
+        </div>
+
+        <label>Correct Answer Index (0-3)</label>
+        <input id="correct" type="number" min="0" max="3">
+
+        <button id="add" class="add-btn">Save Question</button>
+    </section>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="host.js"></script>
+
+</body>
+</html>
